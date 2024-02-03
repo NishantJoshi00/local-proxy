@@ -18,3 +18,14 @@ Now, you wish to switch to a different server, without interrupting the traffic:
 
 1. First, register your new server (e.g. consider you started it on 8082) `make add-serer PORT=8082`
 2. Once you are confident that the traffic is working properly, and there is not problem with the new server, you can simple unregister the old server by saying `make remove-server PORT=8081`
+
+
+# how to test this?
+
+To test this you will need 4 terminals
+ on the first, run `cd test/a; python3 -m http.server 8081`
+ on the second, run `cd test/b; python3 -m http.server 8082`
+ on the third, run `make add-server start-proxy PORT=8081`
+ then on the last, run `python3 test/test.py`
+
+Now, you can try the commands from the [Example](#Example) on the third terminal, can you can see how to load is balanced between the server A and B on the last terminal
