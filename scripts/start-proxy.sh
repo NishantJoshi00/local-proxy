@@ -11,4 +11,4 @@ if [ "$(docker ps -aq -f status=exited -f name=nginx-proxy)" ]; then
     docker rm nginx-proxy
 fi
 
-docker run -d --net=host -v $(pwd)/:/etc/nginx/ --name nginx-proxy nginx
+docker run -p 8080:8080 -d --net=host -v $(pwd)/:/etc/nginx/ --name nginx-proxy nginx

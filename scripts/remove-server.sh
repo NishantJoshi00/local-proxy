@@ -6,19 +6,19 @@ PORT=$1
 
 if [ -z "$PORT" ]
 then
-    echo -e "\e[31mPlease provide a port number\e[0m"
+    echo -e "Please provide a port number"
     exit 1
 fi
 
 if ! [[ $PORT =~ ^[0-9]+$ ]]
 then
-    echo -e "\e[31mPort must be a number\e[0m"
+    echo -e "Port must be a number"
     exit 1
 fi
 
 if ! awk -F: '{print $2}' < ./conf.d/upstream.conf | grep -w "$PORT"
 then
-    echo -e "\e[31mPort $PORT is not running\e[0m"
+    echo -e "Port $PORT is not running"
     exit 1
 fi
 

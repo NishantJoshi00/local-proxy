@@ -10,9 +10,9 @@ __validate_port:
 
 proxy:
 	@echo "Usage: make proxy [start|logs|stop]"
-	@echo -e "\t\e[32m\e[1mstart-proxy\e[0m\e[32m: start the proxy\e[0m"
-	@echo -e "\t\e[33m\e[1mlogs-proxy\e[0m\e[33m: view the logs of the proxy\e[0m"
-	@echo -e "\t\e[31m\e[1mstop-proxy\e[0m\e[31m: stop the proxy server\e[0m"
+	@echo -e "\tstart-proxy: start the proxy"
+	@echo -e "\tlogs-proxy: view the logs of the proxy"
+	@echo -e "\tstop-proxy: stop the proxy server"
 
 start-proxy:
 	@echo "Starting the proxy"
@@ -30,9 +30,9 @@ stop-proxy:
 
 server:
 	@echo "Usage: make server [add|remove|list]"
-	@echo -e "\t\e[32m\e[1madd-server PORT={PORT}\e[0m\e[32m: add a server\e[0m"
-	@echo -e "\t\e[33m\e[1mlist-server\e[0m\e[33m: list the currently running servers\e[0m"
-	@echo -e "\t\e[31m\e[1mremove-server PORT={PORT}\e[0m\e[31m: remove a server\e[0m"
+	@echo -e "\tadd-server PORT={PORT}: add a server"
+	@echo -e "\tlist-server: list the currently running servers"
+	@echo -e "\tremove-server PORT={PORT}: remove a server"
 
 add-server: __validate_port
 	@read -p "Are you sure you want to add $(PORT)? [y/N] " confirm; \
